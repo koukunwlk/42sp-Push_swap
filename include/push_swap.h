@@ -6,7 +6,7 @@
 /*   By: mamaro-d <mamaro-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/28 11:52:23 by mamaro-d          #+#    #+#             */
-/*   Updated: 2022/01/30 16:24:59 by mamaro-d         ###   ########.fr       */
+/*   Updated: 2022/02/01 12:31:39 by mamaro-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,8 @@ void	pa_op(t_stack *stack_dst, t_stack *stack_src);
 void	ra_op(t_stack *stack);
 void	rra_op(t_stack *stack);
 void	pb_op(t_stack *stack_dst, t_stack *stack_src);
+void	rb_op(t_stack *stack);
+void	rrb_op(t_stack *stack);
 void	push_swap(t_stack *stack_a, t_stack *stack_b);
 void	destroy_stacks(t_stack *stack_a, t_stack *stack_b);
 int		find_higher(t_stack *stack);
@@ -62,4 +64,12 @@ int		find_lower(t_stack *stack);
 int		find_next_low(t_stack *stack, int max);
 void	move_top_two(t_stack *stack_a);
 void	simple_sort(t_stack *stack_a, t_stack *stack_b);
+void	complex_sort(t_stack *stack_a, t_stack *stack_b);
+int		*booble_sort(int *stack, int size);
+int		set_range(t_stack *stack_a, int size_range);
+int		*create_sorted(int *ordered, t_stack *stack_a);
+int		*create_range(int *ordered, int	*range, int size, t_stack *stack_a);
+int		get_position(t_stack *stack, int value);
+int		moves_count(t_stack *stack, int value);
+
 #endif

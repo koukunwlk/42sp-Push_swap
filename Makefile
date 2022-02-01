@@ -18,28 +18,33 @@ PATH_VALID	= $(PATH_SRC)validates/
 PATH_UTILS	= $(PATH_SRC)utils/
 PATH_WRITE	= $(PATH_SRC)write_stacks/
 
-SRCS		=	$(PATH_MAIN)push_swap.c\
-				$(PATH_SORT)sort_stack.c\
-				$(PATH_SORT)simple_sort.c\
+SRCS		=	$(PATH_FREE)destroy_stacks.c\
+				$(PATH_MAIN)push_swap.c\
 				$(PATH_INIT)init_stack.c\
+				$(PATH_MOVES)move_top_two.c\
+				$(PATH_SORT)booblesort.c\
+				$(PATH_SORT)complex_sort.c\
+				$(PATH_SORT)complex_utils.c\
+				$(PATH_SORT)simple_sort.c\
+				$(PATH_SORT)sort_stack.c\
+				$(PATH_SWAP)pa_swap.c\
+				$(PATH_SWAP)pb_swap.c\
+				$(PATH_SWAP)ra_swap.c\
+				$(PATH_SWAP)rb_swap.c\
+				$(PATH_SWAP)rra_swap.c\
+				$(PATH_SWAP)rrb_swap.c\
+				$(PATH_SWAP)sa_swap.c\
+				$(PATH_UTILS)find_higher.c\
+				$(PATH_UTILS)find_lower.c\
 				$(PATH_UTILS)ft_atoi.c\
 				$(PATH_UTILS)ft_calloc.c\
 				$(PATH_UTILS)ft_is_digit.c\
 				$(PATH_VALID)is_diferent.c\
 				$(PATH_VALID)is_number.c\
 				$(PATH_VALID)is_range.c\
-				$(PATH_VALID)verify.c\
 				$(PATH_VALID)is_sorted.c\
+				$(PATH_VALID)verify.c\
 				$(PATH_WRITE)atribute_stack.c\
-				$(PATH_SWAP)sa_swap.c\
-				$(PATH_SWAP)ra_swap.c\
-				$(PATH_SWAP)rra_swap.c\
-				$(PATH_SWAP)pa_swap.c\
-				$(PATH_SWAP)pb_swap.c\
-				$(PATH_FREE)destroy_stacks.c\
-				$(PATH_UTILS)find_higher.c\
-				$(PATH_UTILS)find_lower.c\
-				$(PATH_MOVES)move_top_two.c\
 
 OBJS		= $(patsubst $(PATH_SRC)%.c, $(PATH_OBJ)%.o, $(SRCS))
 

@@ -6,7 +6,7 @@
 /*   By: mamaro-d <mamaro-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/28 12:10:24 by mamaro-d          #+#    #+#             */
-/*   Updated: 2022/01/29 18:09:37 by mamaro-d         ###   ########.fr       */
+/*   Updated: 2022/02/01 13:09:42 by mamaro-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,4 +18,8 @@ void	sorting(t_stack *stack_a, t_stack *stack_b)
 		sa_op(stack_a);
 	else if (stack_a->top >= 2 && stack_a->top <= 5)
 		simple_sort(stack_a, stack_b);
+	else
+	{
+		complex_sort(stack_a, stack_b);
+	}
 }
