@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mamaro-d <coder@student.42.fr>             +#+  +:+       +#+        */
+/*   By: mamaro-d <mamaro-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/28 11:52:23 by mamaro-d          #+#    #+#             */
-/*   Updated: 2022/02/02 01:23:12 by mamaro-d         ###   ########.fr       */
+/*   Updated: 2022/02/02 14:28:19 by mamaro-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <unistd.h>
 # include <stddef.h>
 # include <stdio.h>
+# include "../libft/libft.h"
 
 # define TRUE 1
 # define FALSE 0
@@ -25,12 +26,18 @@
 
 /* Structs */
 
-typedef struct s_struct
+typedef struct s_stack
 {
 	int	data;
 	int index;
-	struct s_struct *next;
-	struct s_struct *previous;
-}	t_struct;
+	struct s_stack *next;
+	struct s_stack *previous;
+}	t_stack;
+
+
+t_stack	*init_stack();
+int 	validate_args(int argc, char *argv[]);
+void	populate_stack(int argc, char *argv[], t_stack *stack);
+void	free_stack(t_stack *stack);
 
 #endif

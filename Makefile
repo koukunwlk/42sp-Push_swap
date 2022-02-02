@@ -20,6 +20,20 @@ PATH_UTILS	= $(PATH_SRC)utils/
 PATH_WRITE	= $(PATH_SRC)write_stacks/
 
 SRCS		= $(PATH_MAIN)push_swap.c\
+			  $(PATH_VALID)validate_args.c\
+			  $(PATH_INIT)init_stack.c\
+			  $(PATH_INIT)populate_stack.c\
+			  $(PATH_FREE)free_stack.c
+			  $(PATH_SWAP)pa.c
+			  $(PATH_SWAP)pb.c
+			  $(PATH_SWAP)ra.c
+			  $(PATH_SWAP)rb.c
+			  $(PATH_SWAP)rr.c
+			  $(PATH_SWAP)rra.c
+			  $(PATH_SWAP)rrb.c
+			  $(PATH_SWAP)rrr.c
+			  $(PATH_SWAP)sa.c
+			  $(PATH_SWAP)sb.c
 			  
 
 
@@ -28,7 +42,7 @@ OBJS		= $(patsubst $(PATH_SRC)%.c, $(PATH_OBJ)%.o, $(SRCS))
 all: $(NAME)
 
 $(NAME): $(OBJS) $(LIBFT)
-	@$(CC) $(CFLAGS) $(INCLUDE) $(LIBFT) $(PATH_MAIN)main.c $(OBJS)  -o $(NAME)
+	@$(CC) $(CFLAGS) $(INCLUDE) $(OBJS) $(LIBFT)  -o $(NAME)
 
 $(PATH_OBJ)%.o: $(PATH_SRC)%.c
 	@mkdir -p $(PATH_OBJ)
@@ -44,7 +58,7 @@ $(PATH_OBJ)%.o: $(PATH_SRC)%.c
 	@$(CC) $(CFLAGS) $(INCLUDE) -c $< -o $@
 
 $(LIBFT):
-	@make -c ./libft
+	@make --no-print-directory -C ./libft
 clean: 
 	@$(RM) $(PATH_OBJ)
 

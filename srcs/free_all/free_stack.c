@@ -1,42 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   free_stack.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mamaro-d <mamaro-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/02 01:23:49 by mamaro-d          #+#    #+#             */
-/*   Updated: 2022/02/02 14:55:41 by mamaro-d         ###   ########.fr       */
+/*   Created: 2022/02/02 14:27:08 by mamaro-d          #+#    #+#             */
+/*   Updated: 2022/02/02 15:01:04 by mamaro-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	print_stack(t_stack *stack)
+void    free_stack(t_stack *stack)
 {
-	while(stack)
+	while (stack->next)
+			stack = stack->next;
+	while (stack->previous)
 	{
-		printf("%d\n", stack->data);
-		stack = stack->next;
-	}	
-}
-int	main(int argc, char *argv[])
-{
-	t_stack	*stack_a;
-	t_stack	*stack_b;
-
-	stack_a = init_stack();
-	printf("%lubytes\n", sizeof(t_stack *));
-	if(!validate_args(argc, argv))
-	{
-		write(2, "Error\n", 6);
-		return (1);
+			stack = stack->previous;
+			free(stack->next);
 	}
-	else
-	{
-		populate_stack(argc, argv, stack_a);
-	}
-	print_stack(stack_a);
-	free_stack(stack_a);
+	free(stack);
 }
-

@@ -1,42 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   populate_stack.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mamaro-d <mamaro-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/02 01:23:49 by mamaro-d          #+#    #+#             */
-/*   Updated: 2022/02/02 14:55:41 by mamaro-d         ###   ########.fr       */
+/*   Created: 2022/02/02 13:32:40 by mamaro-d          #+#    #+#             */
+/*   Updated: 2022/02/02 14:33:23 by mamaro-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	print_stack(t_stack *stack)
+void	populate_stack(int argc, char *argv[], t_stack *stack)
 {
-	while(stack)
+	int	i;
+
+	i = 1;
+	stack->data = ft_atoi(argv[i]);
+	stack->next = (t_stack *)malloc(sizeof(t_stack));
+	stack->next->previous = stack;
+	stack = stack->next;
+	while(++i < argc - 1)
 	{
-		printf("%d\n", stack->data);
+		stack->data = ft_atoi(argv[i]);
+		stack->next = (t_stack *)malloc(sizeof(t_stack));
+		stack->next->previous = stack;
 		stack = stack->next;
-	}	
-}
-int	main(int argc, char *argv[])
-{
-	t_stack	*stack_a;
-	t_stack	*stack_b;
-
-	stack_a = init_stack();
-	printf("%lubytes\n", sizeof(t_stack *));
-	if(!validate_args(argc, argv))
-	{
-		write(2, "Error\n", 6);
-		return (1);
 	}
-	else
-	{
-		populate_stack(argc, argv, stack_a);
-	}
-	print_stack(stack_a);
-	free_stack(stack_a);
+	stack->data = ft_atoi(argv[i]);
+	stack->next = NULL;
 }
-
