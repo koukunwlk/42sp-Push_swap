@@ -23,17 +23,17 @@ SRCS		= $(PATH_MAIN)push_swap.c\
 			  $(PATH_VALID)validate_args.c\
 			  $(PATH_INIT)init_stack.c\
 			  $(PATH_INIT)populate_stack.c\
-			  $(PATH_FREE)free_stack.c
-			  $(PATH_SWAP)pa.c
-			  $(PATH_SWAP)pb.c
-			  $(PATH_SWAP)ra.c
-			  $(PATH_SWAP)rb.c
-			  $(PATH_SWAP)rr.c
-			  $(PATH_SWAP)rra.c
-			  $(PATH_SWAP)rrb.c
-			  $(PATH_SWAP)rrr.c
-			  $(PATH_SWAP)sa.c
-			  $(PATH_SWAP)sb.c
+			  $(PATH_FREE)free_stack.c\
+			  $(PATH_SWAP)pa.c\
+			  $(PATH_SWAP)pb.c\
+			  $(PATH_SWAP)ra.c\
+			  $(PATH_SWAP)rb.c\
+			  $(PATH_SWAP)rr.c\
+			  $(PATH_SWAP)rra.c\
+			  $(PATH_SWAP)rrb.c\
+			  $(PATH_SWAP)rrr.c\
+			  $(PATH_SWAP)sa.c\
+			  $(PATH_SWAP)sb.c\
 			  
 
 
