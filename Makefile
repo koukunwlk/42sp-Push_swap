@@ -21,6 +21,7 @@ PATH_WRITE	= $(PATH_SRC)write_stacks/
 
 SRCS		= $(PATH_MAIN)push_swap.c\
 			  $(PATH_VALID)validate_args.c\
+			  $(PATH_VALID)is_sorted.c\
 			  $(PATH_INIT)init_stack.c\
 			  $(PATH_INIT)populate_stack.c\
 			  $(PATH_FREE)free_stack.c\
@@ -34,6 +35,7 @@ SRCS		= $(PATH_MAIN)push_swap.c\
 			  $(PATH_SWAP)rrr.c\
 			  $(PATH_SWAP)sa.c\
 			  $(PATH_SWAP)sb.c\
+			  $(PATH_SORT)sort_3.c
 			  
 
 

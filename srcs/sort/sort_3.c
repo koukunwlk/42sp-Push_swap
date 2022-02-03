@@ -1,29 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rra.c                                              :+:      :+:    :+:   */
+/*   sort_3.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mamaro-d <mamaro-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/02 18:38:47 by mamaro-d          #+#    #+#             */
-/*   Updated: 2022/02/02 19:43:06 by mamaro-d         ###   ########.fr       */
+/*   Created: 2022/02/03 12:53:59 by mamaro-d          #+#    #+#             */
+/*   Updated: 2022/02/03 13:46:05 by mamaro-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	rra_op(t_stack **stack, int flag)
-{
-	t_stack	*last;
 
-	last = *stack;
-	while (last->next)
-		last = last->next;
-	last->previous->next = NULL;
-	last->previous = NULL;
-	last->next = *stack;
-	(*stack)->previous = last;
-	*stack = last;
-	if (!flag)
-		write(1, "rra\n", 4);
+void	sort_3(t_stack **stack_a)
+{
+	if(is_sorted(*stack_a))
+		return ;
+	if((*stack_a)->data > (*stack_a)->next->data && (*stack_a)->next->data < (*stack_a)->next->next->data)
+		sa_op(stack_a, 0);
+	else if((*stack_a)->data < (*stack_a)->next->data && (*stack_a)->next->data > (*stack_a)->next->next->data)
+		rra_op(stack_a, 0);
+	sort_3(stack_a);
 }

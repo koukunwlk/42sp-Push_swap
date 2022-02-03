@@ -6,7 +6,7 @@
 /*   By: mamaro-d <mamaro-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/02 12:21:39 by mamaro-d          #+#    #+#             */
-/*   Updated: 2022/02/02 13:55:32 by mamaro-d         ###   ########.fr       */
+/*   Updated: 2022/02/02 19:46:07 by mamaro-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,10 @@ static int	is_num(char *str)
 
 	i = 0;
 	len = ft_strlen(str);
-	while(i < len)
+	while (i < len)
 	{
-		if(ft_isalpha(str[i]))
-			return(FALSE);
+		if (ft_isalpha(str[i]))
+			return (FALSE);
 		i++;
 	}
 	return (TRUE);
@@ -34,12 +34,12 @@ static int	has_duplicates(char *argv[], int argc)
 	int	j;
 
 	i = 1;
-	while(i < argc)
+	while (i < argc)
 	{
 		j = i + 1;
-		while(j < argc)
+		while (j < argc)
 		{
-			if(ft_atoi(argv[i]) == ft_atoi(argv[j]))
+			if (ft_atoi(argv[i]) == ft_atoi(argv[j]))
 				return (TRUE);
 			j++;
 		}
@@ -47,7 +47,8 @@ static int	has_duplicates(char *argv[], int argc)
 	}
 	return (FALSE);
 }
-int validate_args(int argc, char *argv[])
+
+int	validate_args(int argc, char *argv[])
 {
 	int	i;
 
@@ -60,10 +61,10 @@ int validate_args(int argc, char *argv[])
 			return (FALSE);
 		i++;
 	}
-	if(has_duplicates(argv, argc))
+	if (has_duplicates(argv, argc))
 		return (FALSE);
-	while(--argc > 1)
-		if(!is_num(argv[argc]))
-			return(FALSE);
+	while (--argc > 1)
+		if (!is_num(argv[argc]))
+			return (FALSE);
 	return (TRUE);
 }

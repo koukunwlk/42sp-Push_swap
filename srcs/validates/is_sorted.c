@@ -1,29 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rra.c                                              :+:      :+:    :+:   */
+/*   is_sorted.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mamaro-d <mamaro-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/02 18:38:47 by mamaro-d          #+#    #+#             */
-/*   Updated: 2022/02/02 19:43:06 by mamaro-d         ###   ########.fr       */
+/*   Created: 2022/02/03 13:23:57 by mamaro-d          #+#    #+#             */
+/*   Updated: 2022/02/03 13:28:03 by mamaro-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	rra_op(t_stack **stack, int flag)
+int	is_sorted(t_stack *stack)
 {
-	t_stack	*last;
-
-	last = *stack;
-	while (last->next)
-		last = last->next;
-	last->previous->next = NULL;
-	last->previous = NULL;
-	last->next = *stack;
-	(*stack)->previous = last;
-	*stack = last;
-	if (!flag)
-		write(1, "rra\n", 4);
+	while (stack->next)
+	{
+		if (!(stack->data < stack->next->data))
+			return (FALSE);
+		stack = stack->next;
+	}
+	return (TRUE);
 }

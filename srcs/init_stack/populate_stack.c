@@ -6,7 +6,7 @@
 /*   By: mamaro-d <mamaro-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/02 13:32:40 by mamaro-d          #+#    #+#             */
-/*   Updated: 2022/02/02 14:33:23 by mamaro-d         ###   ########.fr       */
+/*   Updated: 2022/02/02 19:39:30 by mamaro-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	populate_stack(int argc, char *argv[], t_stack *stack)
 	stack->next = (t_stack *)malloc(sizeof(t_stack));
 	stack->next->previous = stack;
 	stack = stack->next;
-	while(++i < argc - 1)
+	while (++i < argc - 1)
 	{
 		stack->data = ft_atoi(argv[i]);
 		stack->next = (t_stack *)malloc(sizeof(t_stack));
