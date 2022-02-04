@@ -35,7 +35,12 @@ SRCS		= $(PATH_MAIN)push_swap.c\
 			  $(PATH_SWAP)rrr.c\
 			  $(PATH_SWAP)sa.c\
 			  $(PATH_SWAP)sb.c\
-			  $(PATH_SORT)sort_3.c
+			  $(PATH_SORT)sort_3.c\
+			  $(PATH_SORT)sort_5.c\
+			  $(PATH_UTILS)find_bigger.c\
+			  $(PATH_UTILS)find_lower.c\
+			  $(PATH_UTILS)stack_size.c\
+			  $(PATH_UTILS)count_moves.c\
 			  
 
 
@@ -66,3 +71,5 @@ clean:
 
 fclean: clean
 	@$(RM) $(NAME)
+
+re: fclean all

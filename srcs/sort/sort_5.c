@@ -1,42 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   sort_5.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mamaro-d <mamaro-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/02 01:23:49 by mamaro-d          #+#    #+#             */
-/*   Updated: 2022/02/04 16:47:59 by mamaro-d         ###   ########.fr       */
+/*   Created: 2022/02/04 11:41:58 by mamaro-d          #+#    #+#             */
+/*   Updated: 2022/02/04 16:43:58 by mamaro-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	print_stack(t_stack *stack)
+void	sort_5(t_stack *stack_a, t_stack *stack_b)
 {
-	while (stack)
+	t_stack	*low;
+	int		distance;
+	low = find_lower(stack_a);
+	distance = distance_to_top(stack_a, low->data);
+	if (distance > stack_size(stack_a) / 2)
 	{
-		printf("%d\n", stack->data);
-		stack = stack->next;
-	}	
-}
-
-int	main(int argc, char *argv[])
-{
-	t_stack	*stack_a;
-	t_data	data;
-
-	stack_a = init_stack();
-	data.a = stack_a;
-	data.b = NULL;
-	if (!validate_args(argc, argv))
-	{
-		write(2, "Error\n", 6);
-		return (1);
+		printf("Distacnia: %d\n", distance);
+		distance -= stack_size(stack_a);
+		printf("execute %d rra\n", distance);
+		printf("stack size: %d\n", stack_size(stack_a));
+		printf("meio da stack size: %d\n", stack_size(stack_a) / 2);
 	}
-	else
-		populate_stack(argc, argv, stack_a);
-	sort_5(data);
-	free_stack(stack_a);
-	return (0);
 }

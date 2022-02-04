@@ -6,7 +6,7 @@
 /*   By: mamaro-d <mamaro-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/28 11:52:23 by mamaro-d          #+#    #+#             */
-/*   Updated: 2022/02/03 13:29:32 by mamaro-d         ###   ########.fr       */
+/*   Updated: 2022/02/04 16:46:22 by mamaro-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,10 +34,26 @@ typedef struct s_stack
 	struct s_stack	*previous;
 }	t_stack;
 
+typedef struct s_data
+{
+	t_stack *a;
+	t_stack *b;
+	t_stack *tmp;
+	int		max;
+	int		big;
+	int		size;
+	int		group_size;
+	int		group_count;
+}	t_data;
+
 t_stack	*init_stack(void);
 int		validate_args(int argc, char *argv[]);
 int		is_sorted(t_stack *stack);
 void	populate_stack(int argc, char *argv[], t_stack *stack);
+int		stack_size(t_stack *stack);
+int		distance_to_top(t_stack *stack, int num);
+t_stack *find_bigger(t_stack *stack);
+t_stack *find_lower(t_stack *stack);
 void	free_stack(t_stack *stack);
 void	pa_op(t_stack **stack_a, t_stack **stack_b, int flag);
 void	sa_op(t_stack **stack, int flag);
@@ -50,5 +66,6 @@ void	rrb_op(t_stack **stack, int flag);
 void	ss_op(t_stack *stack);
 void	rr_op(t_stack **stack_a, t_stack **stack_b);
 void	rrr_op(t_stack **stack_a, t_stack **stack_b);
-void	sort_3(t_stack **stack_a);
+void	sort_3(t_stack *stack_a);
+void	sort_5(t_stack *stack_a, t_stack *stack_b);
 #endif
