@@ -41,6 +41,7 @@ SRCS		= $(PATH_MAIN)push_swap.c\
 			  $(PATH_UTILS)find_lower.c\
 			  $(PATH_UTILS)stack_size.c\
 			  $(PATH_UTILS)count_moves.c\
+			  $(PATH_UTILS)ft_abs.c\
 			  
 
 
