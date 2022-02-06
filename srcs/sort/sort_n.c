@@ -6,7 +6,7 @@
 /*   By: mamaro-d <mamaro-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/06 15:47:03 by mamaro-d          #+#    #+#             */
-/*   Updated: 2022/02/06 17:56:22 by mamaro-d         ###   ########.fr       */
+/*   Updated: 2022/02/06 18:02:05 by mamaro-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,18 +33,13 @@ void	sort_n(t_data *data)
 		last_group_size += 3;
 		group_size = last_group_size;
 	}
-	sort_3(data);
+	if(data->a->index > data->a->next->index)
+		sa_op(&data->a, 0);
 	group_size = 3;
 	last_group_size = 3;
 	while(data->b->next)
 	{
-		while(group_size > last_group_size - 3 && group_size <= 9)
-		{
-			big_in_group = find_bigger_in_group(data->b, group_size);
-			move_to_a(data, big_in_group);
-			group_size--;
-		}
-		last_group_size += 3;
-		group_size = last_group_size;
+		big_in_group = find_bigger(data->b);
+		move_to_a(data, big_in_group);
 	}
 }
