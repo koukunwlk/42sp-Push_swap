@@ -6,7 +6,7 @@
 /*   By: mamaro-d <mamaro-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/28 11:52:23 by mamaro-d          #+#    #+#             */
-/*   Updated: 2022/02/06 16:54:06 by mamaro-d         ###   ########.fr       */
+/*   Updated: 2022/02/06 17:31:21 by mamaro-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,7 @@ void	ss_op(t_stack *stack);
 void	rr_op(t_stack **stack_a, t_stack **stack_b);
 void	rrr_op(t_stack **stack_a, t_stack **stack_b);
 void	move_to_b(t_data *data, t_stack *stack);
+void 	move_to_a(t_data *data, t_stack *stack);
 void	sort_3(t_data *data);
 void	sort_5(t_data *data);
 void	sort_n(t_data *data);

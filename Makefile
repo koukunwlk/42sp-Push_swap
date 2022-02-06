@@ -46,6 +46,7 @@ SRCS		= $(PATH_MAIN)push_swap.c\
 			  $(PATH_UTILS)ft_abs.c\
 			  $(PATH_UTILS)index_sort.c\
 			  $(PATH_MOVES)move_to_b.c\
+			  $(PATH_MOVES)move_to_a.c\
 			  
 
 

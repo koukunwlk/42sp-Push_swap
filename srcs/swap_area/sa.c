@@ -6,7 +6,7 @@
 /*   By: mamaro-d <mamaro-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/02 15:48:12 by mamaro-d          #+#    #+#             */
-/*   Updated: 2022/02/02 19:44:29 by mamaro-d         ###   ########.fr       */
+/*   Updated: 2022/02/06 17:38:28 by mamaro-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,8 @@ void	sa_op(t_stack **stack, int flag)
 {
 	(*stack)->previous = (*stack)->next;
 	(*stack)->next = (*stack)->next->next;
-	(*stack)->next->previous = *stack;
+	if((*stack)->next)
+		(*stack)->next->previous = *stack;
 	(*stack)->previous->next = (*stack);
 	(*stack)->previous->previous = NULL;
 	(*stack) = (*stack)->previous;

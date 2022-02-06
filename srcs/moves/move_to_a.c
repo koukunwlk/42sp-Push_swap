@@ -1,28 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   count_moves.c                                      :+:      :+:    :+:   */
+/*   move_to_a.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mamaro-d <mamaro-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/04 12:03:30 by mamaro-d          #+#    #+#             */
-/*   Updated: 2022/02/06 17:40:43 by mamaro-d         ###   ########.fr       */
+/*   Created: 2022/02/06 17:29:25 by mamaro-d          #+#    #+#             */
+/*   Updated: 2022/02/06 17:30:51 by mamaro-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	distance_to_top(t_stack *stack, int num)
+void move_to_a(t_data *data, t_stack *stack)
 {
-	int	i;
-	
-	i = 0;
-	while(stack)
+	int distance;
+	distance = distance_to_top(data->b, stack->data);
+	while(distance)
 	{
-		if(stack->data == num)
-			break;
-		stack = stack->next;
-		i++;
+		distance = distance_to_top(data->b, stack->data);
+		if (distance >= stack_size(data->b) / 2)
+			rrb_op(&data->b, 0);
+		else if (distance < stack_size (data->b) / 2 && distance != 0)
+			rb_op(&data->b, 0);
+		if(distance == 0)
+			pa_op(&data->a, &data->b, 0);
 	}
-	return (i);
 }
