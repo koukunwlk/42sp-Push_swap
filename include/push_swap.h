@@ -6,7 +6,7 @@
 /*   By: mamaro-d <mamaro-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/28 11:52:23 by mamaro-d          #+#    #+#             */
-/*   Updated: 2022/02/04 17:04:12 by mamaro-d         ###   ########.fr       */
+/*   Updated: 2022/02/06 16:54:06 by mamaro-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,12 +49,14 @@ typedef struct s_data
 t_stack	*init_stack(void);
 int		validate_args(int argc, char *argv[]);
 int		is_sorted(t_stack *stack);
+void 	index_stack(t_stack *stack);
 int		ft_max(int x, int y);
 int		ft_min(int x, int y);
 int		ft_abs(int a);
 void	populate_stack(int argc, char *argv[], t_stack *stack);
 int		stack_size(t_stack *stack);
 int		distance_to_top(t_stack *stack, int num);
+t_stack *find_bigger_in_group(t_stack *stack, int index);
 t_stack *find_bigger(t_stack *stack);
 t_stack *find_lower(t_stack *stack);
 void	free_stack(t_stack *stack);
@@ -69,6 +71,8 @@ void	rrb_op(t_stack **stack, int flag);
 void	ss_op(t_stack *stack);
 void	rr_op(t_stack **stack_a, t_stack **stack_b);
 void	rrr_op(t_stack **stack_a, t_stack **stack_b);
+void	move_to_b(t_data *data, t_stack *stack);
 void	sort_3(t_data *data);
 void	sort_5(t_data *data);
+void	sort_n(t_data *data);
 #endif

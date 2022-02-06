@@ -37,11 +37,15 @@ SRCS		= $(PATH_MAIN)push_swap.c\
 			  $(PATH_SWAP)sb.c\
 			  $(PATH_SORT)sort_3.c\
 			  $(PATH_SORT)sort_5.c\
+			  $(PATH_SORT)sort_n.c\
 			  $(PATH_UTILS)find_bigger.c\
 			  $(PATH_UTILS)find_lower.c\
 			  $(PATH_UTILS)stack_size.c\
 			  $(PATH_UTILS)count_moves.c\
+			  $(PATH_UTILS)find_bigger_in_group.c\
 			  $(PATH_UTILS)ft_abs.c\
+			  $(PATH_UTILS)index_sort.c\
+			  $(PATH_MOVES)move_to_b.c\
 			  
 
 

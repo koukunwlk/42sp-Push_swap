@@ -6,7 +6,7 @@
 /*   By: mamaro-d <mamaro-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/02 01:23:49 by mamaro-d          #+#    #+#             */
-/*   Updated: 2022/02/04 17:01:59 by mamaro-d         ###   ########.fr       */
+/*   Updated: 2022/02/06 16:52:26 by mamaro-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,8 @@ void	print_stack(t_stack *stack)
 {
 	while (stack)
 	{
-		printf("%d\n", stack->data);
+		printf("Value = %d\n", stack->data);
+		printf("index = %d\n", stack->index);
 		stack = stack->next;
 	}	
 }
@@ -36,7 +37,8 @@ int	main(int argc, char *argv[])
 	}
 	else
 		populate_stack(argc, argv, data.a);
-	sort_5(&data);
+	index_stack(data.a);
+	sort_n(&data);
 	free_stack(data.a);
 	return (0);
 }

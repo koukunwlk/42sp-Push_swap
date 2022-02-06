@@ -1,41 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   index_sort.c                                       :+:      :+:    :+:   */
+/*   find_bigger_in_group.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mamaro-d <mamaro-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/04 15:44:29 by mamaro-d          #+#    #+#             */
-/*   Updated: 2022/02/06 17:05:17 by mamaro-d         ###   ########.fr       */
+/*   Created: 2022/02/06 16:32:52 by mamaro-d          #+#    #+#             */
+/*   Updated: 2022/02/06 16:35:06 by mamaro-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void index_stack(t_stack *stack)
+
+t_stack *find_bigger_in_group(t_stack *stack, int index)
 {
-	int	min;
-	int	max;
-	int	j;
-	t_stack *tmp;
-	
-	max = INT_MIN;
-	j = 1;
-	tmp = stack;
-	while(j <= stack_size(stack))
+	t_stack *bigger;
+
+	while(stack)
 	{
-		min = INT_MAX;
-		while (stack)
-		{
-			if (stack->data <= min && stack->data > max)
-			{
-				min = stack->data;
-				stack->index = j;
-			}
-			stack = stack->next;
-		}
-		j++;
-		max = min;
-		stack = tmp;
+		if(stack->index == index)
+			bigger = stack;
+		stack = stack->next;
 	}
+	return (bigger);
 }

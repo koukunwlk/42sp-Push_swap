@@ -1,41 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   index_sort.c                                       :+:      :+:    :+:   */
+/*   move_to_top.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mamaro-d <mamaro-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/04 15:44:29 by mamaro-d          #+#    #+#             */
-/*   Updated: 2022/02/06 17:05:17 by mamaro-d         ###   ########.fr       */
+/*   Created: 2022/02/06 16:38:23 by mamaro-d          #+#    #+#             */
+/*   Updated: 2022/02/06 16:49:07 by mamaro-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void index_stack(t_stack *stack)
+void	move_to_b(t_data *data, t_stack *stack)
 {
-	int	min;
-	int	max;
-	int	j;
-	t_stack *tmp;
-	
-	max = INT_MIN;
-	j = 1;
-	tmp = stack;
-	while(j <= stack_size(stack))
+	int distance;
+	distance = distance_to_top(data->a, stack->data);
+	while(distance)
 	{
-		min = INT_MAX;
-		while (stack)
-		{
-			if (stack->data <= min && stack->data > max)
-			{
-				min = stack->data;
-				stack->index = j;
-			}
-			stack = stack->next;
-		}
-		j++;
-		max = min;
-		stack = tmp;
+		distance = distance_to_top(data->a, stack->data);
+		if (distance >= stack_size(data->a) / 2)
+			rra_op(&data->a, 0);
+		else if (distance < stack_size (data->a) / 2 && distance != 0)
+			ra_op(&data->a, 0);
+		if(distance == 0)
+			pb_op(&data->a, &data->b, 0);
 	}
 }
