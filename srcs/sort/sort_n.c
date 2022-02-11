@@ -6,7 +6,7 @@
 /*   By: mamaro-d <mamaro-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/06 15:47:03 by mamaro-d          #+#    #+#             */
-/*   Updated: 2022/02/11 16:04:06 by mamaro-d         ###   ########.fr       */
+/*   Updated: 2022/02/11 16:05:00 by mamaro-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ void	sort_n(t_data *data)
 	}
 	while(data->a)
 	{
-		pb_op(data->a, data->b, 1);
+		pb_op(&data->a, &data->b, 1);
 	}
 }
 
