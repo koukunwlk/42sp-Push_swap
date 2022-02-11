@@ -18,7 +18,7 @@ int group_count(t_data *data)
 	int	stack_len;
 
 	i = 0;
-	stack_len = stack_size(data->a);
+	stack_len = stack_size(data->a) * 2;
 	while(stack_len)
 	{
 		stack_len /= 2;
@@ -39,7 +39,7 @@ void	sort_n(t_data *data)
 
 	last_group = 0;
 	i = 1;
-	while(stack_size(data->a) > 2)
+	while(data->a->next)
 	{
 		hold_index = data->group_size * i;
 		while(hold_index > last_group)
