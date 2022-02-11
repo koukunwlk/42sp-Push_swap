@@ -2,7 +2,7 @@ NAME		= push_swap
 LIBFT		= ./libft/libft.a
 
 CC			= clang
-CFLAGS		= -g3 
+CFLAGS		= -g3 -Wall -Wextra -Werror -g3
 
 RM			= rm -rf
 

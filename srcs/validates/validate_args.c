@@ -6,7 +6,7 @@
 /*   By: mamaro-d <mamaro-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/02 12:21:39 by mamaro-d          #+#    #+#             */
-/*   Updated: 2022/02/03 16:25:01 by mamaro-d         ###   ########.fr       */
+/*   Updated: 2022/02/11 19:56:39 by mamaro-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ int	validate_args(int argc, char *argv[])
 		return (FALSE);
 	while (i < argc)
 	{
-		if (ft_atoi(argv[i]) > INT_MAX || ft_atoi(argv[i]) < INT_MIN)
+		if (ft_atoli(argv[i]) > INT_MAX || ft_atoli(argv[i]) < INT_MIN)
 			return (FALSE);
 		i++;
 	}

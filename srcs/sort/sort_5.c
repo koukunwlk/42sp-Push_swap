@@ -6,7 +6,7 @@
 /*   By: mamaro-d <mamaro-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/04 11:41:58 by mamaro-d          #+#    #+#             */
-/*   Updated: 2022/02/05 11:13:50 by mamaro-d         ###   ########.fr       */
+/*   Updated: 2022/02/11 19:13:26 by mamaro-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ void	sort_5(t_data *data)
 {
 	t_stack	*low;
 	int		distance;
-	int		min;
 
 	while(stack_size(data->a) > 3)
 	{

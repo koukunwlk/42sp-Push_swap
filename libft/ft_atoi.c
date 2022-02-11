@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mamaro-d <coder@student.42.fr>             +#+  +:+       +#+        */
+/*   By: mamaro-d <mamaro-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/23 17:22:16 by mamaro-d          #+#    #+#             */
-/*   Updated: 2021/11/15 16:48:42 by mamaro-d         ###   ########.fr       */
+/*   Updated: 2022/02/11 19:03:16 by mamaro-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ static int	ft_count_nums(const char *str);
 
 int	ft_atoi(const char *str)
 {
-	size_t	num;
+	int		num;
 	int		sign;
 
 	sign = 1;
@@ -53,4 +53,4 @@ static int	ft_count_nums(const char *str)
 		++*tmp;
 	}
 	return (count);
-}
+}	

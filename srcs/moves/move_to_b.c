@@ -6,7 +6,7 @@
 /*   By: mamaro-d <mamaro-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/06 16:38:23 by mamaro-d          #+#    #+#             */
-/*   Updated: 2022/02/11 16:11:11 by mamaro-d         ###   ########.fr       */
+/*   Updated: 2022/02/11 19:37:22 by mamaro-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	move_to_b(t_data *data, t_stack *stack)
 	int distance;
 	if(stack == NULL)
 		return ;
-	distance = distance_to_top(data->a, stack->data);
+	distance = distance_to_top(data->a, stack->index);
 	if(distance == 0)
 	{
 		pb_op(&data->a, &data->b, 0);
@@ -25,7 +25,7 @@ void	move_to_b(t_data *data, t_stack *stack)
 	}
 	while(distance)
 	{
-		distance = distance_to_top(data->a, stack->data);
+		distance = distance_to_top(data->a, stack->index);
 		if (distance >= stack_size(data->a) / 2)
 			rra_op(&data->a, 0);
 		else if (distance < stack_size (data->a) / 2 && distance != 0)

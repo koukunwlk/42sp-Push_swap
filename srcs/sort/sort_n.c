@@ -6,7 +6,7 @@
 /*   By: mamaro-d <mamaro-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/06 15:47:03 by mamaro-d          #+#    #+#             */
-/*   Updated: 2022/02/11 18:41:10 by mamaro-d         ###   ########.fr       */
+/*   Updated: 2022/02/11 19:52:50 by mamaro-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,8 @@ void	sort_n(t_data *data)
 			bigger = find_bigger(data->b);
 			move_to_a(data, bigger);
 		}
+		if(!data->b && stack_size(data->a) == 100)
+			break ;
 	}
 	
 }

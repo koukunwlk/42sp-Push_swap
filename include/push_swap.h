@@ -6,7 +6,7 @@
 /*   By: mamaro-d <mamaro-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/28 11:52:23 by mamaro-d          #+#    #+#             */
-/*   Updated: 2022/02/11 15:05:51 by mamaro-d         ###   ########.fr       */
+/*   Updated: 2022/02/11 20:02:20 by mamaro-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ int		distance_to_top(t_stack *stack, int num);
 t_stack *find_bigger_in_group(t_stack *stack, int index);
 t_stack *find_bigger(t_stack *stack);
 t_stack *find_lower(t_stack *stack);
-void	free_stack(t_stack *stack);
+int		free_stack(t_stack *stack);
 void	pa_op(t_stack **stack_a, t_stack **stack_b, int flag);
 void	sa_op(t_stack **stack, int flag);
 void	ra_op(t_stack **stack, int flag);

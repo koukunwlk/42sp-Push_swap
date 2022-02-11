@@ -6,7 +6,7 @@
 /*   By: mamaro-d <mamaro-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/04 12:03:30 by mamaro-d          #+#    #+#             */
-/*   Updated: 2022/02/06 17:40:43 by mamaro-d         ###   ########.fr       */
+/*   Updated: 2022/02/11 19:38:07 by mamaro-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	distance_to_top(t_stack *stack, int num)
 	i = 0;
 	while(stack)
 	{
-		if(stack->data == num)
+		if(stack->index == num)
 			break;
 		stack = stack->next;
 		i++;
