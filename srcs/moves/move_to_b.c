@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   move_to_top.c                                      :+:      :+:    :+:   */
+/*   move_to_b.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mamaro-d <mamaro-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/06 16:38:23 by mamaro-d          #+#    #+#             */
-/*   Updated: 2022/02/06 16:49:07 by mamaro-d         ###   ########.fr       */
+/*   Updated: 2022/02/11 15:56:45 by mamaro-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 void	move_to_b(t_data *data, t_stack *stack)
 {
 	int distance;
+	if(stack == NULL)
+		return ;
 	distance = distance_to_top(data->a, stack->data);
 	while(distance)
 	{
