@@ -6,7 +6,7 @@
 /*   By: mamaro-d <mamaro-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/02 01:23:49 by mamaro-d          #+#    #+#             */
-/*   Updated: 2022/02/11 17:44:51 by mamaro-d         ###   ########.fr       */
+/*   Updated: 2022/02/11 18:34:40 by mamaro-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int	main(int argc, char *argv[])
 		populate_stack(argc, argv, data.a);
 	index_stack(data.a);
 	sort_n(&data);
-	//print_stack(data.a);
+	print_stack(data.a);
 	free_stack(data.a);
 	return (0);
 }
