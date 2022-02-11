@@ -6,7 +6,7 @@
 /*   By: mamaro-d <mamaro-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/06 15:47:03 by mamaro-d          #+#    #+#             */
-/*   Updated: 2022/02/11 18:27:01 by mamaro-d         ###   ########.fr       */
+/*   Updated: 2022/02/11 18:28:44 by mamaro-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int group_count(t_data *data)
 		stack_len /= 2;
 		i++;
 	}
-	return (i);
+	return (i + 1);
 }
 
 void	sort_n(t_data *data)
