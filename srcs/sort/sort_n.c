@@ -6,7 +6,7 @@
 /*   By: mamaro-d <mamaro-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/06 15:47:03 by mamaro-d          #+#    #+#             */
-/*   Updated: 2022/02/06 18:07:36 by mamaro-d         ###   ########.fr       */
+/*   Updated: 2022/02/11 15:16:13 by mamaro-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int group_count(t_data *data)
 	int	stack_len;
 
 	i = 0;
-	stack_len = stack_size(data->a) * 2;
+	stack_len = stack_size(data->a);
 	while(stack_len)
 	{
 		stack_len /= 2;
@@ -29,26 +29,49 @@ int group_count(t_data *data)
 
 void	sort_n(t_data *data)
 {
-	int	last_group;
-	int	i;
-	int	hold_index;
+	t_stack *nearest_in_group;
+	int		j;
+	int		i;
 
 	data->group_count = group_count(data);
 	data->group_size = stack_size(data->a) / data->group_count;
 	printf("Group size = %d", data->group_size);
-
-	last_group = 0;
 	i = 1;
-	while(data->a->next)
+	j = 1;
+	while(stack_size(data->a) > 10)
 	{
-		hold_index = data->group_size * i;
-		while(hold_index > last_group)
+		while (j < data->group_size * i)
 		{
-			data->big = find_bigger_in_group(data->a, hold_index);
-			move_to_b(data, data->big);
-			hold_index--;
+			nearest_in_group = find_nearest_in_group(data->a, i, data->group_size);
+			move_to_b(data, nearest_in_group);
+			j++;
 		}
-		last_group += data->group_size;
 		i++;
 	}
+}
+
+t_stack	*find_nearest_in_group(t_stack *stack, int group, int group_size)
+{
+	t_stack *nearest;
+	t_stack	*tmp;
+	int		small_distance;
+	int		distance;
+
+	tmp = stack;
+	small_distance = INT_MAX;
+	while(tmp)
+	{
+		if (tmp->index <= group * group_size)
+		{
+			distance = distance_to_top(stack, tmp->index);
+			if (ft_abs(distance) < small_distance)
+			{
+				nearest = tmp;
+				if (distance == 0)
+					break ;
+			}
+		}
+		tmp = tmp->next;
+	}
+	return (nearest);
 }

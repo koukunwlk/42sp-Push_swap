@@ -6,7 +6,7 @@
 /*   By: mamaro-d <mamaro-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/28 11:52:23 by mamaro-d          #+#    #+#             */
-/*   Updated: 2022/02/06 17:31:21 by mamaro-d         ###   ########.fr       */
+/*   Updated: 2022/02/11 15:05:51 by mamaro-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,7 @@ t_stack	*init_stack(void);
 int		validate_args(int argc, char *argv[]);
 int		is_sorted(t_stack *stack);
 void 	index_stack(t_stack *stack);
+t_stack	*find_nearest_in_group(t_stack *stack, int group, int group_size);
 int		ft_max(int x, int y);
 int		ft_min(int x, int y);
 int		ft_abs(int a);
