@@ -12,34 +12,43 @@
 
 #include "push_swap.h"
 
+int group_count(t_data *data)
+{
+	int i;
+	int	stack_len;
+
+	i = 0;
+	stack_len = stack_size(data->a);
+	while(stack_len)
+	{
+		stack_len /= 2;
+		i++;
+	}
+	return (i);
+}
+
 void	sort_n(t_data *data)
 {
-	int	group_size;
-	int	group_size_static;
-	int	last_group_size;
-	t_stack *big_in_group;
+	int	last_group;
+	int	i;
+	int	hold_index;
 
-	group_size = 3;
-	group_size_static = 3;
-	last_group_size = 3;
-	while(stack_size(data->a) > group_size_static)
+	data->group_count = group_count(data);
+	data->group_size = stack_size(data->a) / data->group_count;
+	printf("Group size = %d", data->group_size);
+
+	last_group = 0;
+	i = 1;
+	while(stack_size(data->a) > 2)
 	{
-		while(group_size > last_group_size - 3 && group_size <= 9)
+		hold_index = data->group_size * i;
+		while(hold_index > last_group)
 		{
-			big_in_group = find_bigger_in_group(data->a, group_size);
-			move_to_b(data, big_in_group);
-			group_size--;
+			data->big = find_bigger_in_group(data->a, hold_index);
+			move_to_b(data, data->big);
+			hold_index--;
 		}
-		last_group_size += 3;
-		group_size = last_group_size;
+		last_group += data->group_size;
+		i++;
 	}
-	sort_3(data);
-	group_size = 3;
-	last_group_size = 3;
-	while(data->b->next)
-	{
-		big_in_group = find_bigger(data->b);
-		move_to_a(data, big_in_group);
-	}
-	pa_op(&data->a, &data->b, 0);
 }

@@ -40,7 +40,7 @@ typedef struct s_data
 	t_stack *b;
 	t_stack *tmp;
 	int		max;
-	int		big;
+	t_stack	*big;
 	int		size;
 	int		group_size;
 	int		group_count;
