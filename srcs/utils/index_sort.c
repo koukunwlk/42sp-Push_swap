@@ -6,7 +6,7 @@
 /*   By: mamaro-d <mamaro-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/04 15:44:29 by mamaro-d          #+#    #+#             */
-/*   Updated: 2022/02/06 17:05:17 by mamaro-d         ###   ########.fr       */
+/*   Updated: 2022/02/11 17:43:53 by mamaro-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void index_stack(t_stack *stack)
 	t_stack *tmp;
 	
 	max = INT_MIN;
-	j = 1;
+	j = 0;
 	tmp = stack;
 	while(j <= stack_size(stack))
 	{
