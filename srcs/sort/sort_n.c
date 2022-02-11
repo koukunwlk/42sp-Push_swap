@@ -6,7 +6,7 @@
 /*   By: mamaro-d <mamaro-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/06 15:47:03 by mamaro-d          #+#    #+#             */
-/*   Updated: 2022/02/11 17:42:47 by mamaro-d         ###   ########.fr       */
+/*   Updated: 2022/02/11 18:27:01 by mamaro-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,21 +36,13 @@ void	sort_n(t_data *data)
 	data->group_count = group_count(data);
 	data->group_size = stack_size(data->a) / data->group_count;
 	group = 1;
-	while(group < data->group_count + 1)
+	while(group < data->group_count)
 	{
 		nearest_in_group = find_nearest_in_group(data->a, group, data->group_size);
 		move_to_b(data, nearest_in_group);
 		if(nearest_in_group == NULL)
 			group++;
 	}
-	pb_op(&data->a, &data->b, 0);
-	pb_op(&data->a, &data->b, 0);
-	while(stack_size(data->b) > 1)
-	{
-		bigger = find_bigger(data->b);
-		move_to_a(data, bigger);
-	}
-	pa_op(&data->a, &data->b, 0);
 }
 
 t_stack	*find_nearest_in_group(t_stack *stack, int group, int group_size)
