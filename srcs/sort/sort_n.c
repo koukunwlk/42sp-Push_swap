@@ -6,7 +6,7 @@
 /*   By: mamaro-d <mamaro-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/06 15:47:03 by mamaro-d          #+#    #+#             */
-/*   Updated: 2022/02/12 15:31:22 by mamaro-d         ###   ########.fr       */
+/*   Updated: 2022/02/12 18:38:56 by mamaro-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,11 +49,8 @@ void	sort_n(t_data *data)
 	t_stack	*bigger;
 	int		group;
 
-	data->group_count = ft_sqrt(stack_size(data->a));
+	data->group_count = group_count(data);
 	data->group_size = stack_size(data->a) / data->group_count;
-	/* printf("group_count\tgroup_size\tstack_size\n");
-	printf("%d\t\t%d\t\t%d\n", data->group_count, data->group_size, stack_size(data->a));
-	return ; */
 	group = 1;
 	while(!is_sorted(data->a))
 	{

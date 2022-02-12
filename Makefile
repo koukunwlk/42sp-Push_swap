@@ -73,9 +73,11 @@ $(PATH_OBJ)%.o: $(PATH_SRC)%.c
 $(LIBFT):
 	@make --no-print-directory -C ./libft
 clean: 
+	@make clean --no-print-directory -C ./libft
 	@$(RM) $(PATH_OBJ)
 
 fclean: clean
+	@make fclean --no-print-directory -C ./libft
 	@$(RM) $(NAME)
 
 re: fclean all
