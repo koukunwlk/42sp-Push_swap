@@ -6,7 +6,7 @@
 /*   By: mamaro-d <mamaro-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/06 15:47:03 by mamaro-d          #+#    #+#             */
-/*   Updated: 2022/02/12 18:38:56 by mamaro-d         ###   ########.fr       */
+/*   Updated: 2022/02/12 19:00:30 by mamaro-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,14 +28,14 @@ size_t	ft_sqrt(int number)
 	return (i - 1);
 }
 
-int group_count(t_data *data)
+int	group_count(t_data *data)
 {
-	int i;
+	int	i;
 	int	stack_len;
 
 	i = 0;
 	stack_len = stack_size(data->a) * 2;
-	while(stack_len)
+	while (stack_len)
 	{
 		stack_len /= 2;
 		i++;
@@ -45,34 +45,33 @@ int group_count(t_data *data)
 
 void	sort_n(t_data *data)
 {
-	t_stack *nearest_in_group;
+	t_stack	*nearest;
 	t_stack	*bigger;
 	int		group;
 
 	data->group_count = group_count(data);
 	data->group_size = stack_size(data->a) / data->group_count;
 	group = 1;
-	while(!is_sorted(data->a))
+	while (!is_sorted(data->a))
 	{
-		while(group <= data->group_count + 1)
+		while (group <= data->group_count + 1)
 		{
-			nearest_in_group = find_nearest_in_group(data->a, group, data->group_size);
-			move_to_b(data, nearest_in_group);
-			if(nearest_in_group == NULL)
+			nearest = find_nearest_in_group(data->a, group, data->group_size);
+			move_to_b(data, nearest);
+			if (nearest == NULL)
 				group++;
 		}
-		while(data->b)
+		while (data->b)
 		{
 			bigger = find_bigger(data->b);
 			move_to_a(data, bigger);
 		}
 	}
-	
 }
 
 t_stack	*find_nearest_in_group(t_stack *stack, int group, int group_size)
 {
-	t_stack *nearest;
+	t_stack	*nearest;
 	t_stack	*tmp;
 	int		small_distance;
 	int		distance;
@@ -80,7 +79,7 @@ t_stack	*find_nearest_in_group(t_stack *stack, int group, int group_size)
 	tmp = stack;
 	small_distance = INT_MAX;
 	nearest = NULL;
-	while(tmp)
+	while (tmp)
 	{
 		if (tmp->index <= group * group_size)
 		{

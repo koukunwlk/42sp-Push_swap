@@ -6,7 +6,7 @@
 /*   By: mamaro-d <mamaro-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/02 17:03:28 by mamaro-d          #+#    #+#             */
-/*   Updated: 2022/02/11 16:37:37 by mamaro-d         ###   ########.fr       */
+/*   Updated: 2022/02/12 19:01:06 by mamaro-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	pa_op(t_stack **stack_a, t_stack **stack_b, int flag)
 	}
 	(*stack_a)->previous = *stack_b;
 	(*stack_b) = (*stack_b)->next;
-	if(*stack_b)
+	if (*stack_b)
 		(*stack_b)->previous = NULL;
 	(*stack_a)->previous->next = *stack_a;
 	(*stack_a)->previous->previous = NULL;
