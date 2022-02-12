@@ -6,7 +6,7 @@
 /*   By: mamaro-d <mamaro-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 18:04:41 by mamaro-d          #+#    #+#             */
-/*   Updated: 2022/02/03 18:17:10 by mamaro-d         ###   ########.fr       */
+/*   Updated: 2022/02/12 14:46:35 by mamaro-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,10 @@ t_stack *find_lower(t_stack *stack)
 	min = INT_MAX;
 	while(stack)
 	{
-		if(stack->data < min)
+		if(stack->index < min)
 		{
 			lower = stack;
-			min = stack->data;
+			min = stack->index;
 		}
 		stack = stack->next;
 	}

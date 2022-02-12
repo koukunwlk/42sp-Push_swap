@@ -6,7 +6,7 @@
 /*   By: mamaro-d <mamaro-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/04 11:41:58 by mamaro-d          #+#    #+#             */
-/*   Updated: 2022/02/11 19:13:26 by mamaro-d         ###   ########.fr       */
+/*   Updated: 2022/02/12 14:46:25 by mamaro-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	sort_5(t_data *data)
 	while(stack_size(data->a) > 3)
 	{
 		low = find_lower(data->a);
-		distance = distance_to_top(data->a, low->data);
+		distance = distance_to_top(data->a, low->index);
 		if (distance >= stack_size(data->a) / 2)
 			rra_op(&data->a, 0);
 		else if (distance < stack_size (data->a) / 2 && distance != 0)

@@ -6,7 +6,7 @@
 /*   By: mamaro-d <mamaro-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 17:51:18 by mamaro-d          #+#    #+#             */
-/*   Updated: 2022/02/11 19:48:42 by mamaro-d         ###   ########.fr       */
+/*   Updated: 2022/02/12 14:49:20 by mamaro-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ t_stack *find_bigger(t_stack *stack)
 		if(stack->index > max)
 		{
 			bigger = stack;	
-			max = stack->data;
+			max = stack->index;
 		}
 		stack = stack->next;
 	}
