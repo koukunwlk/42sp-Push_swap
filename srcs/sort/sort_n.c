@@ -6,29 +6,26 @@
 /*   By: mamaro-d <mamaro-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/06 15:47:03 by mamaro-d          #+#    #+#             */
-/*   Updated: 2022/02/12 15:21:43 by mamaro-d         ###   ########.fr       */
+/*   Updated: 2022/02/12 15:31:22 by mamaro-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_sqrt(int nb)
+size_t	ft_sqrt(int number)
 {
-	int i;
-	int sq;
+	size_t	i;
 
-	i = 1;
-	sq = 1;
-	if(nb == 0)
-		return(0);
-	while (i * i < nb)
+	i = 0;
+	while (i * i <= (size_t)number)
 	{
+		if (i * i == (size_t)number)
+		{
+			return (i);
+		}
 		i++;
 	}
-	if ((nb % i) == 0)
-		return (i);
-	else
-		return(0);
+	return (i - 1);
 }
 
 int group_count(t_data *data)
@@ -54,6 +51,9 @@ void	sort_n(t_data *data)
 
 	data->group_count = ft_sqrt(stack_size(data->a));
 	data->group_size = stack_size(data->a) / data->group_count;
+	/* printf("group_count\tgroup_size\tstack_size\n");
+	printf("%d\t\t%d\t\t%d\n", data->group_count, data->group_size, stack_size(data->a));
+	return ; */
 	group = 1;
 	while(!is_sorted(data->a))
 	{
