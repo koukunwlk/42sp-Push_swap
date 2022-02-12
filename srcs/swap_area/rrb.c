@@ -6,7 +6,7 @@
 /*   By: mamaro-d <mamaro-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/02 19:18:51 by mamaro-d          #+#    #+#             */
-/*   Updated: 2022/02/02 19:43:18 by mamaro-d         ###   ########.fr       */
+/*   Updated: 2022/02/12 15:43:25 by mamaro-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	rrb_op(t_stack **stack, int flag)
 {
 	t_stack	*last;
 
+	if(stack_size(*stack) < 2)
+		return ;
 	last = *stack;
 	while (last->next)
 		last = last->next;
