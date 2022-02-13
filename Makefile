@@ -6,6 +6,20 @@ CFLAGS		= -Wall -Wextra -Werror
 
 RM			= rm -rf
 
+
+B =		$(shell tput bold)
+BLA =	$(shell tput setaf 0)
+RED =	$(shell tput setaf 1)
+GRE =	$(shell tput setaf 2)
+YEL =	$(shell tput setaf 3)
+BLU =	$(shell tput setaf 4)
+MAG =	$(shell tput setaf 5)
+CYA =	$(shell tput setaf 6)
+WHI =	$(shell tput setaf 7)
+D =		$(shell tput sgr0)
+BEL =	$(shell tput bel)
+CLR =	$(shell tput el 1)
+
 INCLUDE 	= -I ./include/
 PATH_OBJ	= ./objs/
 PATH_SRC	= ./srcs/
@@ -56,6 +70,7 @@ all: $(NAME)
 
 $(NAME): $(OBJS) $(LIBFT)
 	@$(CC) $(CFLAGS) $(INCLUDE) $(OBJS) $(LIBFT)  -o $(NAME)
+	@echo "$(GRE)Push_swap compiled!\n$(D)"
 
 $(PATH_OBJ)%.o: $(PATH_SRC)%.c
 	@mkdir -p $(PATH_OBJ)
@@ -71,13 +86,16 @@ $(PATH_OBJ)%.o: $(PATH_SRC)%.c
 	@$(CC) $(CFLAGS) $(INCLUDE) -c $< -o $@
 
 $(LIBFT):
-	@make --no-print-directory -C ./libft
+	@make -C ./libft
+	@echo "$(GRE)\nLibft compiled.$(D)"
 clean: 
-	@make clean --no-print-directory -C ./libft
+	@make fclean -C ./libft
+	@echo "$(RED)Cleaning libft.$(D)"
 	@$(RM) $(PATH_OBJ)
+	@echo "$(RED)Cleaning Push_swap objects.$(D)"
 
 fclean: clean
-	@make fclean --no-print-directory -C ./libft
 	@$(RM) $(NAME)
+	@echo "$(RED)Removing Push_swap binary.$(D)"
 
 re: fclean all
