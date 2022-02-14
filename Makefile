@@ -2,7 +2,7 @@ NAME		= push_swap
 LIBFT		= ./libft/libft.a
 
 CC			= clang
-CFLAGS		= -Wall -Wextra -Werror 
+CFLAGS		= -Wall -Wextra -Werror
 
 RM			= rm -rf
 
@@ -31,7 +31,6 @@ PATH_SORT	= $(PATH_SRC)sort/
 PATH_SWAP	= $(PATH_SRC)swap_area/
 PATH_VALID	= $(PATH_SRC)validates/
 PATH_UTILS	= $(PATH_SRC)utils/
-PATH_WRITE	= $(PATH_SRC)write_stacks/
 
 SRCS		= $(PATH_MAIN)push_swap.c\
 			  $(PATH_VALID)validate_args.c\

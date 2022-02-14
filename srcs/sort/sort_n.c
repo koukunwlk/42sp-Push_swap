@@ -6,7 +6,7 @@
 /*   By: mamaro-d <mamaro-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/06 15:47:03 by mamaro-d          #+#    #+#             */
-/*   Updated: 2022/02/12 19:00:30 by mamaro-d         ###   ########.fr       */
+/*   Updated: 2022/02/13 17:17:02 by mamaro-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int	group_count(t_data *data)
 	int	stack_len;
 
 	i = 0;
-	stack_len = stack_size(data->a) * 2;
+	stack_len = stack_size(data->a);
 	while (stack_len)
 	{
 		stack_len /= 2;

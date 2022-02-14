@@ -6,7 +6,7 @@
 /*   By: mamaro-d <mamaro-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/02 01:23:49 by mamaro-d          #+#    #+#             */
-/*   Updated: 2022/02/12 18:52:52 by mamaro-d         ###   ########.fr       */
+/*   Updated: 2022/02/14 17:19:22 by mamaro-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,17 @@ int	main(int argc, char *argv[])
 {
 	t_data	data;
 
-	data.a = init_stack();
+	data.a = NULL;
 	data.b = NULL;
 	if (argc < 3)
 		return (0);
 	if (!validate_args(argc, argv))
 		return (write(2, "Error\n", 6));
 	else
+	{
+		data.a = init_stack();
 		populate_stack(argc, argv, data.a);
+	}
 	index_stack(data.a);
 	if (is_sorted(data.a))
 		return (free_stack(data.a));
