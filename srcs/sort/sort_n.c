@@ -6,7 +6,7 @@
 /*   By: mamaro-d <mamaro-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/06 15:47:03 by mamaro-d          #+#    #+#             */
-/*   Updated: 2022/02/14 19:44:48 by mamaro-d         ###   ########.fr       */
+/*   Updated: 2022/02/14 19:58:05 by mamaro-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ void	sort_n(t_data *data)
 	group = 1;
 	while (!is_sorted(data->a))
 	{
-		while (group <= data->group_count)
+		while (group <= data->group_count + 1)
 		{
 			nearest = find_nearest_in_group(data->a, group, data->group_size);
 			move_to_b(data, nearest);
