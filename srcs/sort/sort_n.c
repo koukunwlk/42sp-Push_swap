@@ -6,7 +6,7 @@
 /*   By: mamaro-d <mamaro-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/06 15:47:03 by mamaro-d          #+#    #+#             */
-/*   Updated: 2022/02/14 19:58:05 by mamaro-d         ###   ########.fr       */
+/*   Updated: 2022/02/15 14:28:52 by mamaro-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,6 +93,7 @@ t_stack	*find_nearest_in_group(t_stack *stack, int group, int group_size)
 					break ;
 			}
 		}
+		small_distance = ft_abs(distance);
 		tmp = tmp->next;
 	}
 	return (nearest);

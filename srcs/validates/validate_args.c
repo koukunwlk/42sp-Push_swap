@@ -6,7 +6,7 @@
 /*   By: mamaro-d <mamaro-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/02 12:21:39 by mamaro-d          #+#    #+#             */
-/*   Updated: 2022/02/14 18:58:03 by mamaro-d         ###   ########.fr       */
+/*   Updated: 2022/02/15 14:20:23 by mamaro-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ int	validate_args(int argc, char *argv[])
 	}
 	if (has_duplicates(argv, argc))
 		return (FALSE);
-	while (--argc > 1)
+	while (argc-- > 1)
 		if (!is_num(argv[argc]))
 			return (FALSE);
 	return (TRUE);
